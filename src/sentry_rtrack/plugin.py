@@ -54,11 +54,13 @@ class RtrackPlugin(IssuePlugin):
 
         payload = {'title': form_data['title'], 'description': form_data['description'], 'project': project, 'token': token}
         headers = {'content-type': 'application/json'}
-        r = requests.post("http://rtrack.ru/webhooks/sentry", data=json.dumps(payload), headers=headers)
-        print r.text
-        return r.json()['intid']
-
-
+        try:
+            r = requests.post("http://rtrack.ru/webhooks/sentry", data=json.dumps(payload), headers=headers)
+            print r.text
+            return r.json()['intid']
+        except Exception, e:
+            msg = e.read()
+            raise forms.ValidationError(_('Error communicating with Rtrack: %s') % (msg,))
 
     def get_issue_label(self, group, issue_id, **kwargs):
         return 'GL-%s' % issue_id
