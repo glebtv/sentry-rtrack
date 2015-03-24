@@ -68,4 +68,4 @@ class RtrackPlugin(IssuePlugin):
     def get_issue_url(self, group, issue_id, **kwargs):
         project = self.get_option('rtrack_project', group.project)
 
-        return 'http://rtrack.ru/%s/issues/%s' % (project, issue_id)
+        return 'http://rtrack.ru/projects/%s/issues/%s' % (project, issue_id)
