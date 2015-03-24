@@ -52,10 +52,11 @@ class RtrackPlugin(IssuePlugin):
         project = self.get_option('rtrack_project', group.project)
         token = self.get_option('rtrack_token', group.project)
 
-        payload = {'title': form_data['title'], 'description': form_data['description'], 'project': project, token: token}
+        payload = {'title': form_data['title'], 'description': form_data['description'], 'project': project, 'token': token}
         headers = {'content-type': 'application/json'}
         r = requests.post("http://rtrack.ru/webhooks/sentry", data=json.dumps(payload), headers=headers)
         return r.json()['intid']
+
 
 
     def get_issue_label(self, group, issue_id, **kwargs):
