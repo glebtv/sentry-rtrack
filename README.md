@@ -1,4 +1,4 @@
-Sentry Gitlab
+Sentry Rtrack
 =============
 
 A plugin for Sentry which allow you to create issues in your rtrack repositories from Sentry errors.

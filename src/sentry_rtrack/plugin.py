@@ -29,7 +29,7 @@ class RtrackOptionsForm(forms.Form):
 class RtrackPlugin(IssuePlugin):
     author = 'rocketscience.pro'
     author_url = 'https://github.com/glebtv/sentry-rtrack'
-    version = sentry_gitlab.VERSION
+    version = sentry_rtrack.VERSION
     description = "Integrate Rtrack issues by linking a repository to a project"
     resource_links = [
         ('Bug Tracker', 'https://github.com/glebtv/sentry-rtrack/issues'),
