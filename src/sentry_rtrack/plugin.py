@@ -56,7 +56,7 @@ class RtrackPlugin(IssuePlugin):
         headers = {'content-type': 'application/json'}
         try:
             r = requests.post("http://rtrack.ru/webhooks/sentry", data=json.dumps(payload), headers=headers)
-            print r.text
+            #print r.text
             return r.json()['intid']
         except Exception, e:
             msg = e.read()
