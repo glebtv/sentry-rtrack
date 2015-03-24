@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-sentry-gitlab
+sentry-rtrack
 =============
 
 An extension for Sentry which integrates with Rtrack. Specifically, it allows
