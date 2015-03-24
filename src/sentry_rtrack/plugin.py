@@ -55,6 +55,7 @@ class RtrackPlugin(IssuePlugin):
         payload = {'title': form_data['title'], 'description': form_data['description'], 'project': project, 'token': token}
         headers = {'content-type': 'application/json'}
         r = requests.post("http://rtrack.ru/webhooks/sentry", data=json.dumps(payload), headers=headers)
+        print r.text
         return r.json()['intid']
 
 
